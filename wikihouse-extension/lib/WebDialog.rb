@@ -65,11 +65,7 @@ module WikihouseExtension
     WIKIHOUSE_DOWNLOADS[download_id] = filename
     
     # Initiate the download.
-    
-    puts "About to call wikihouse.download(download_id, base64_url)\n download_id = #{download_id}\n base64_url = #{base64_url}"
-    # This call is sucessful?
     dialog.execute_script "wikihouse.download('#{download_id}', '#{base64_url}');"
-    puts "The wikihouse.download function call was completed"
     
   end
 
@@ -92,18 +88,12 @@ module WikihouseExtension
     filename = WIKIHOUSE_DOWNLOADS[download_id]
     WIKIHOUSE_DOWNLOADS.delete download_id
 
-    
-    # TODO:(Chris) The Wikihouse Model Loading currently fails here as the  
-    # segment_count value returned is the empty string ""
     segment_count = dialog.get_element_value "design-download-data"
-    
-    puts "The segment count = #{segment_count}"
     
     dialog.close
 
     if segment_count == ""
       show_wikihouse_error errmsg
-      puts "Segment count variable was not parsed correctly"
       return
     end
 
@@ -121,7 +111,6 @@ module WikihouseExtension
     data = data.join('').unpack("m")[0]
     if data == ""
       show_wikihouse_error errmsg
-      puts "Triger 5"
       return
     end
 
@@ -170,16 +159,10 @@ module WikihouseExtension
     }
 
     dialog.add_action_callback("save") { |dialog, download_id|
-      
-      puts "Running Save Callback with download_id: #{download_id}"
-      
       wikihouse_save_callback(dialog, download_id)
     }
 
     dialog.add_action_callback("error") { |dialog, download_id|
-      
-      puts "Running Error Callback with download_id = #{download_id}"
-      
       wikihouse_error_callback(dialog, download_id)
     }
 
