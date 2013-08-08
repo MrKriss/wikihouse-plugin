@@ -15,10 +15,10 @@ See the [changes log](changes.md) for a list of recent changes and new features.
 
 ##Installing
 
-####Using the Make File (Mac OS)
+###Using the Make File (Mac OS)
   
 1.  Download or clone the repository, then run `make build` to generate the `wikihouse_extension.rbz` file.
-2.  Open SketchUp and navigate to **Window** > **Preferences** (Microsoft Windows) or **SketchUp** > **Preferences** (Mac OS X).
+2.  Open SketchUp and navigate to **SketchUp** > **Preferences**.
 3.  Click on Extensions, which will display all current extensions installed. 
 4.  Click on the *Install Extension* button and locate the built `wikihouse_extension.rbz` file to install it.
 
@@ -26,18 +26,13 @@ The plugin will then appear in the list of other extensions, and all necessary f
 
 ###Manually (Windows)
 
-With the "Plugins" folder for SketchUp being:
+Locate the "Plugins" folder for SketchUp:
 
 #### As of SketchUp 2013
-
-On PC, the new plugins folder is typically located in...
-* `C:\Program Files\SketchUp\SketchUp 2013\Plugins`
-
-On Mac, the new plugins folder is located in...
-* `Macintosh HD/Users/Library/Application/Support/SketchUp 2013/SketchUp/Plugins`
+* `C:\Program Files\SketchUp\SketchUp 2013\Plugins`   On Windows.
+* `/Users/<username>/Library/Application Support/SketchUp 2013/SketchUp/Plugins`   On Mac.
 
 #### For Older Versions of SketchUp 
-
 *  `C:\Program Files\Google\Google SketchUp 8\Plugins` On Windows.
 *  `/Library/Application Support/Google SketchUp 8/SketchUp/Plugins` On Mac.
 
